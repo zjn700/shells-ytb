@@ -1,0 +1,59 @@
+<mat-card>
+  <mat-card-title>Shells Ubuntu!</mat-card-title>
+  <!-- <mat-card-subtitle>Sometimes, but Ms. ATHENA doesn't</mat-card-subtitle> -->
+  <mat-card-content select="selector">
+      <mat-grid-list [cols]="breakpoint"  (window:resize)="onResize()" >
+        <mat-grid-tile>
+          <app-video-player  [videoId]="currentVideoId"></app-video-player>
+          <!-- <app-video-player [width]='width' [videoId]="currentVideoId"></app-video-player> -->
+        </mat-grid-tile>
+        <mat-grid-tile>
+
+    <ul>
+      <li *ngFor="let video of videoList">
+        <mat-card-subtitle><a href="#" (click)="selectVideo(video)">{{video.title}}</a></mat-card-subtitle>
+      </li>
+    </ul>
+        </mat-grid-tile>
+        <!-- <mat-grid-tile>3</mat-grid-tile>
+        <mat-grid-tile>4</mat-grid-tile> -->
+
+
+      </mat-grid-list>
+
+    <div #hello class="container" fxLayout="row" fxLayout.xs="column">
+
+      <div #hellox class='videowrapper' fxFlex="55%">
+        <app-video-player [width]='width' [videoId]="currentVideoId"></app-video-player>
+      </div>
+      <div fxFlex="45%">
+        Testing one two three
+    <ul>
+      <li *ngFor="let video of videoList">
+        <mat-card-subtitle><a href="#" (click)="selectVideo(video)">{{video.title}}</a></mat-card-subtitle>
+      </li>
+    </ul>
+      </div>
+
+    </div>
+
+    <!-- <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube-nocookie.com/embed/O0WdUyj0hB8"
+    frameborder="0"
+    allow="accelerometer;
+    autoplay;
+    encrypted-media;
+    gyroscope;
+    picture-in-picture"
+    allowfullscreen>
+  </iframe> -->
+
+
+  </mat-card-content>
+  <!-- <mat-divider inset></mat-divider> -->
+  <mat-card-actions>
+    <button mat-raised-button color="warn">Heya</button>
+  </mat-card-actions>
+</mat-card>
